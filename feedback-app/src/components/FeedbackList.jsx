@@ -1,5 +1,6 @@
+// import {motion, AnimatePresence} from 'framer-motion';
 import React from 'react';
-import FeedbackItem from './FeedbackItem'
+import FeedbackItem from './FeedbackItem';
 import PropTypes from 'prop-types';
 
 function FeedbackList({ feedback, handleDelete }) {
@@ -19,7 +20,8 @@ function FeedbackList({ feedback, handleDelete }) {
 FeedbackList.propTypes = {
     feedback: PropTypes.arrayOf(
         PropTypes.shape({
-            id: PropTypes.number.isRequired,
+            // updated so id can be both a string and number as we are using uuid
+            id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
             text: PropTypes.string.isRequired,
             rating: PropTypes.number.isRequired,
         })
