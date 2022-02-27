@@ -2,7 +2,7 @@ import React from 'react';
 import {useState} from 'react';
 import RatingSelect from './RatingSelect';
 import Card from './shared/Card';
-import Button from './shared/Button'
+import Button from './shared/Button';
 
 
 function FeedbackForm({ handleAdd }) {
@@ -37,7 +37,7 @@ function FeedbackForm({ handleAdd }) {
             handleAdd(newFeedback);
 
             // Resetting text field
-            setText('')
+            setText('');
         }
     }
 
