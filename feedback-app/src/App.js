@@ -3,7 +3,7 @@ import Header from "./components/Header";
 import FeedbackList from './components/FeedbackList';
 import FeedbackStats from './components/FeedbackStats';
 import FeedbackForm from './components/FeedbackForm';
-import HomeIconLink from './components/HomeIconLink';
+// import HomeIconLink from './components/HomeIconLink';
 import AboutIconLink from './components/AboutIconLink';
 import AboutPage from './pages/AboutPage';
 import { FeedbackProvider } from './context/FeedbackContext';
