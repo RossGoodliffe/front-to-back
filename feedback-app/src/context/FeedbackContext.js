@@ -7,7 +7,12 @@ import FeedbackData from '../data/FeedbackData'
 const FeedbackContext = createContext();
 
 export const FeedbackProvider = ({children}) => {
-    const [feedback, setFeedback] = useState(FeedbackData)
+    const [feedback, setFeedback] = useState(FeedbackData);
+    
+    const [feedbackEdit, setFeedbackEdit] = useState({
+        item: {},
+        edit: false
+    })
 
     // Delete Feedback
     const deleteFeedback = (id) => {
@@ -25,12 +30,28 @@ export const FeedbackProvider = ({children}) => {
         setFeedback([newFeedback, ...feedback])
     }
 
+    // Edit Feedback
+    const editFeedback = (item) => {
+        setFeedbackEdit({
+            item,
+            edit: true
+        })
+    }
+
+    // Update Feedback item
+    const updateFeedback = (id, updItem) => {
+        setFeedback(feedback.map((item) => item.id === id ? { ...item, ...updItem } : item))
+    }
+
     return (
         <FeedbackContext.Provider 
             value={{
                 feedback,
                 deleteFeedback,
                 addFeedback,
+                feedbackEdit, // state
+                editFeedback, // function
+                updateFeedback,
             }}>
                 {children}
         </FeedbackContext.Provider>
