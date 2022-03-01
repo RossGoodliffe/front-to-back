@@ -2,3 +2,6 @@
 
 # Ignore notes.txt
 notes.txt
+
+# dependencies
+/node_modules
